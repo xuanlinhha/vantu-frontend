@@ -15,8 +15,28 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mdx-js/mdx": "v1",
+    "@mdx-js/react": "v1",
+    "bootstrap": "^5.1.3",
     "gatsby": "^4.17.2",
+    "gatsby-plugin-layout": "^3.17.0",
+    "gatsby-plugin-mdx": "^3.17.0",
+    "gatsby-plugin-sass": "^5.17.0",
+    "gatsby-source-filesystem": "^4.17.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "^18.1.0",
+    "react-hook-form": "^7.33.1",
+    "react-html-parser": "^2.0.2",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "gray-matter": "^4.0.3",
+    "next-mdx-remote": "^4.0.3"
   }
 }

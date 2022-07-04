@@ -1,7 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `vantu-frontend`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Văn-Tự`,
+    siteUrl: `https://vantu.org`,
   },
-  plugins: [],
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-layout`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `collection`,
+        path: `${__dirname}/collection`,
+      }
+    },
+    `gatsby-plugin-mdx`
+  ],
 }

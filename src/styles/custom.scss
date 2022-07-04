@@ -1,0 +1,81 @@
+/*
+ * See node_modules/bootstrap/scss/bootstrap.scss
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+$new-colors: ("main":#660066);
+$colors: map-merge($colors, $new-colors);
+$theme-colors: map-merge($theme-colors, $colors);
+$link-decoration: none;
+$link-color: $dark;
+$link-hover-color: $dark;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1330px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1270px);
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "width"), "values"),
+          (5: 5%, 10: 10%, 15: 15%, 20: 20%, 30: 30%, 35: 35%, 40: 40%, 45: 45%, 55: 55%, 60: 60%, 65: 65%, 70: 70%, 80: 80%, 85: 85%, 90: 90%, 95: 95%),
+        ),
+      ),
+    ),
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          $colors,
+        ),
+      ),
+    ),
+  )
+);
+
+// Layout & components
+@import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/containers";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/tables";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/button-group";
+@import "node_modules/bootstrap/scss/nav";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/card";
+@import "node_modules/bootstrap/scss/accordion";
+@import "node_modules/bootstrap/scss/breadcrumb";
+@import "node_modules/bootstrap/scss/pagination";
+@import "node_modules/bootstrap/scss/badge";
+@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/progress";
+@import "node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/close";
+@import "node_modules/bootstrap/scss/toasts";
+@import "node_modules/bootstrap/scss/modal";
+@import "node_modules/bootstrap/scss/tooltip";
+@import "node_modules/bootstrap/scss/popover";
+@import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/spinners";
+@import "node_modules/bootstrap/scss/offcanvas";
+@import "node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
