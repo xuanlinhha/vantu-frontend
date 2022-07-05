@@ -13,8 +13,14 @@ export default function BoThu(props) {
     e.preventDefault()
     const han = e.target.innerText
     getPhrase(han)
-      .then(response => { if (response.ok) { return response.json() } })
-      .then(data => { triggerModal(data) })
+      .then(response => {
+        if (response.ok) { return response.json() }
+        return null
+      })
+      .then(body => {
+        if (!body) return
+        triggerModal(body.data)
+      })
   }
   const handleModalSourceClick = (source) => {
     const newModalState = Object.assign({}, modalState, { source: source })
@@ -65,6 +71,7 @@ export default function BoThu(props) {
       </div>
     )
   })
+
   return (
     <div className='container'>
       <div className='row'>

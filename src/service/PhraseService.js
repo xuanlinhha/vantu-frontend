@@ -1,4 +1,4 @@
-const BACK_END_URL = process.env.NEXT_PUBLIC_BACK_END_URL
+const BACK_END_URL = process.env.GATSBY_BACK_END_URL
 
 export const getPhrase = (han) => {
   return fetch(encodeURI(`${BACK_END_URL}/phrases?han=${han}`))
