@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vantu-backend
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+  selector:
+    run: vantu-backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vantu-backend
+spec:
+  selector:
+    matchLabels:
+      run: vantu-backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: vantu-backend
+    spec:
+      containers:
+      - name: vantu-backend
+        image: xuanlinhha/go-vantu-backend
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vantu-frontend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: vantu-frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vantu-frontend
+spec:
+  selector:
+    matchLabels:
+      run: vantu-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: vantu-frontend
+    spec:
+      containers:
+      - name: vantu-frontend
+        image: xuanlinhha/gatsby-vantu-frontend:prod
+        ports:
+        - containerPort: 80

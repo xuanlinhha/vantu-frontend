@@ -1,0 +1,34 @@
+---
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: vantu-frontend
+spec:
+  host: vantu.org
+  tls:
+    secret: vantu.org.secret
+  upstreams:
+  - name: vantu-frontend
+    service: vantu-frontend
+    port: 80
+  routes:
+  - path: /
+    action:
+      pass: vantu-frontend
+---
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: vantu-backend
+spec:
+  host: api.vantu.org
+  tls:
+    secret: vantu.org.secret
+  upstreams:
+  - name: vantu-backend
+    service: vantu-backend
+    port: 3000
+  routes:
+  - path: /
+    action:
+      pass: vantu-backend
