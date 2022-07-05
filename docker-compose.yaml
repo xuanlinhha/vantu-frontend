@@ -7,4 +7,4 @@ services:
   vantu-frontend:
     image: xuanlinhha/gatsby-vantu-frontend
     ports:
-      - "8080:80"
+      - "80:80"
