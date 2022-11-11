@@ -8,3 +8,5 @@ services:
     image: xuanlinhha/gatsby-vantu-frontend
     ports:
       - "80:80"
+    environment:
+      - GATSBY_BACK_END_URL=http://localhost:3000

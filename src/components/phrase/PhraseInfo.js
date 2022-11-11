@@ -36,6 +36,16 @@ export default function PhraseInfo(props) {
       }
     })
   }
+
+  const han = phrase => {
+    if (phrase.svg) {
+      return ReactHtmlParser(phrase.svg)
+    } else {
+      return <span> phrase.han </span>
+    }
+    
+  }
+  
   for (const key of displayKeys) {
     if (key === 'bo' || key === 'phon_the' || key === 'gian_the' || key === 'di_the' || key === 'hinh_thai') {
       items.push(
@@ -67,7 +77,7 @@ export default function PhraseInfo(props) {
           </div>
         </div>
         <div className='col-sm-3 han-font big-font-size'>
-          {props.phrase.han}
+          {han(props.phrase)}
         </div>
       </div>
     </div>
