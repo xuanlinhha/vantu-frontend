@@ -38,12 +38,12 @@ export default function PhraseInfo(props) {
   }
 
   const han = phrase => {
-    if (phrase.svg) {
-      return ReactHtmlParser(phrase.svg)
-    } else {
-      return <span> phrase.han </span>
-    }
-    
+    // if (phrase.svg) {
+    //   return <div> <img src={`data:image/svg+xml;utf8,${encodeURIComponent(phrase.svg)}`} alt="" /></div>
+    // } else {
+    //   return <span> phrase.han </span>
+    // }
+    return <span> {phrase.han} </span>
   }
   
   for (const key of displayKeys) {
@@ -70,14 +70,16 @@ export default function PhraseInfo(props) {
   }
   return (
     <div className='border-bottom'>
-      <div className='row px-1'>
+      <div className='row px-1 d-flex align-items-center'>
         <div className='col-sm-9'>
           <div className='row'>
             {items}
           </div>
         </div>
-        <div className='col-sm-3 han-font big-font-size'>
-          {han(props.phrase)}
+        <div className='col-sm-3 han-font big-font-size text-center'>
+          <div>
+            {han(props.phrase)}
+          </div>
         </div>
       </div>
     </div>
